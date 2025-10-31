@@ -47,10 +47,12 @@ class AlienInvasion:
     def reset(self):
         if self.stats.lives > 0:
             sleep(0.5)
+            self.settings.increase_speed()
             self.stats.lives -= 1
             self.bullets.empty()
             sleep(0.5)
         else:
+            self.settings.initialize_dynamic_settings()
             self.game_active = False
 
     #Helper Methods
